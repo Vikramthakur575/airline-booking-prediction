@@ -6,7 +6,13 @@ import pickle
 # -------------------------------
 # Load Model
 # -------------------------------
-model = pickle.load(open("booking_model.pkl", "rb"))
+import os
+import pickle
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "booking_model.pkl")
+
+model = pickle.load(open(MODEL_PATH, "rb"))
 
 st.set_page_config(page_title="Airline Booking Prediction", layout="centered")
 st.title("✈️ Airline Booking Prediction App")
